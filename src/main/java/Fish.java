@@ -1,7 +1,7 @@
 
 class Fish implements Runnable {
     private final String gender;
-    private final int lifespan; // Продолжительность жизни в секундах
+    private final int lifespan;
     private boolean isAlive = true;
     private final Aquarium aquarium;
 
@@ -14,11 +14,10 @@ class Fish implements Runnable {
     @Override
     public void run() {
         try {
-            // Жизненный цикл рыбы
             for (int i = 0; i < lifespan; i++) {
                 if (!isAlive) break;
                 System.out.println(gender + " fish is living. " + (lifespan - i) + " seconds left.");
-                Thread.sleep(1000); // Симуляция одной секунды жизни
+                Thread.sleep(1000);
             }
             die();
         } catch (InterruptedException e) {
@@ -26,7 +25,6 @@ class Fish implements Runnable {
         }
     }
 
-    // Умереть
     private void die() {
         isAlive = false;
         System.out.println(gender + " fish died.");
