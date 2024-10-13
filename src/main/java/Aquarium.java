@@ -51,6 +51,17 @@ class Aquarium {
                     break;
                 }
             }
+
+            while (hasFishes()) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            }
+
+            stop();
+            System.out.println("Aquarium simulation ended.");
         }).start();
     }
 

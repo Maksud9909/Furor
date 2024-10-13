@@ -8,29 +8,16 @@ public class AquariumSimulation {
         int males = random.nextInt(5) + 1;
         int females = random.nextInt(5) + 1;
 
-
         for (int i = 0; i < males; i++) {
-            int lifespan = random.nextInt(5);
+            int lifespan = random.nextInt(5) + 5;
             aquarium.addFish(new Fish("Male", lifespan, aquarium));
         }
 
         for (int i = 0; i < females; i++) {
-            int lifespan = random.nextInt(5);
+            int lifespan = random.nextInt(5) + 5;
             aquarium.addFish(new Fish("Female", lifespan, aquarium));
         }
 
         aquarium.startLifeCycle();
-
-
-        while (aquarium.hasFishes()) {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
-        }
-
-        aquarium.stop();
-        System.out.println("Aquarium simulation ended.");
     }
 }
