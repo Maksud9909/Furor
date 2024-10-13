@@ -4,7 +4,6 @@
 
 ```bash
 git clone https://github.com/Maksud9909/Furor
-cd aquarium-simulation
 ```
 
 2. Run the app:
