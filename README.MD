@@ -3,7 +3,7 @@
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/aquarium-simulation.git
+git clone https://github.com/Maksud9909/Furor
 cd aquarium-simulation
 ```
 
