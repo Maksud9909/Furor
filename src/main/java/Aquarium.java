@@ -9,6 +9,7 @@ class Aquarium {
     private final Random random = new Random();
     private final ExecutorService executor = Executors.newCachedThreadPool();
     private volatile boolean running = true;
+    public static final int SIZE = 20;
 
     public synchronized void addFish(Fish fish) {
         fishes.add(fish);
@@ -30,9 +31,9 @@ class Aquarium {
             for (int i = 0; i < newFishCount; i++) {
                 String gender = random.nextBoolean() ? "Male" : "Female";
                 int lifespan = random.nextInt(10) + 5;
-                int x = random.nextInt(20);
-                int y = random.nextInt(20);
-                addFish(new Fish(gender, lifespan, this,x,y));
+                int x = random.nextInt(SIZE * 2 + 1) - SIZE;
+                int y = random.nextInt(SIZE * 2 + 1) - SIZE;
+                addFish(new Fish(gender, lifespan, this, x, y));
             }
             System.out.println("Fishes have reproduced! Added " + newFishCount + " new fishes.");
         }

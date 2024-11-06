@@ -18,8 +18,8 @@ class Fish implements Runnable {
 
     private void move() {
         Random random = new Random();
-        x += random.nextInt(3) - 1;
-        y += random.nextInt(3) - 1;
+        x = random.nextInt(Aquarium.SIZE * 2 + 1) - Aquarium.SIZE;
+        y = random.nextInt(Aquarium.SIZE * 2 + 1) - Aquarium.SIZE;
     }
 
     @Override
