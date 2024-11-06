@@ -10,12 +10,16 @@ public class AquariumRun {
 
         for (int i = 0; i < numberOfMales; i++) {
             int lifespan = random.nextInt(5) + 5;
-            aquarium.addFish(new Fish("Male", lifespan, aquarium));
+            int x = random.nextInt(20);
+            int y = random.nextInt(20);
+            aquarium.addFish(new Fish("Male", lifespan, aquarium, x, y));
         }
 
         for (int i = 0; i < numberOfFemales; i++) {
             int lifespan = random.nextInt(5) + 5;
-            aquarium.addFish(new Fish("Female", lifespan, aquarium));
+            int x = random.nextInt(20);
+            int y = random.nextInt(20);
+            aquarium.addFish(new Fish("Female", lifespan, aquarium, x, y));
         }
 
         aquarium.startLifeCycle();

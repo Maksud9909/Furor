@@ -30,7 +30,9 @@ class Aquarium {
             for (int i = 0; i < newFishCount; i++) {
                 String gender = random.nextBoolean() ? "Male" : "Female";
                 int lifespan = random.nextInt(10) + 5;
-                addFish(new Fish(gender, lifespan, this));
+                int x = random.nextInt(20);
+                int y = random.nextInt(20);
+                addFish(new Fish(gender, lifespan, this,x,y));
             }
             System.out.println("Fishes have reproduced! Added " + newFishCount + " new fishes.");
         }
